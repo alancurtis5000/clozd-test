@@ -33,34 +33,47 @@ const UserDetailCard = (props) => {
         <Skeleton loading={false} avatar active>
           <Meta avatar={<Avatar src={picture} />} title={name} />
           <div style={{ marginTop: 16 }}>
-            <label htmlFor="email">Email: </label>
+            <label>
+              <b>Email: </b>
+            </label>
             <span id="email">{email}</span>
           </div>
           <div>
-            <label htmlFor="phone">Phone: </label>
+            <label>
+              <b>Phone: </b>
+            </label>
             <span id="phone">{phone}</span>
           </div>
           <div>
-            <label htmlFor="address">Address: </label>
+            <label>
+              <b>Address: </b>
+            </label>
             <span id="address">{address}</span>
           </div>
-
           <div>
-            <label htmlFor="city">City: </label>
+            <label>
+              <b>City: </b>
+            </label>
             <span id="city">{city}</span>
           </div>
           <div>
-            <label htmlFor="postcode">Postcode: </label>
+            <label>
+              <b>Postcode: </b>
+            </label>
             <span id="postcode">{postcode}</span>
           </div>
           <div>
-            <label htmlFor="country">Country: </label>
+            <label>
+              <b>Country: </b>
+            </label>
             <span id="country">{country}</span>
           </div>
 
           <div>
-            <label htmlFor="dob">Birthdate: </label>
-            <span id="dob">{moment(dob).htmlFormat("MMMM Do YYYY")}</span>
+            <label>
+              <b>Birthdate: </b>
+            </label>
+            <span id="dob">{moment(dob).format("MMMM Do YYYY")}</span>
           </div>
         </Skeleton>
       </Card>
