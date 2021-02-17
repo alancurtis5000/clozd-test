@@ -13,7 +13,7 @@ const Header = () => {
           margin: 0,
         }}
       >
-        Alan Curtis: Test
+        Alan Curtis: Get all the Users
       </h1>
     </div>
   );
