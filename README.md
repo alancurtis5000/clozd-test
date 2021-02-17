@@ -1,3 +1,7 @@
+# Live Site
+Hosted with github-pages [here](https://alancurtis5000.github.io/clozd-test/).
+ https://alancurtis5000.github.io/clozd-test/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
