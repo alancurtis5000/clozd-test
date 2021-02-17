@@ -2,11 +2,15 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 import { getUsers } from "../../redux/reducers/users/usersActions";
 import { Table } from "antd";
+import isEmpty from "lodash/isEmpty";
 
 const UsersDataTable = (props) => {
-  const { getUsers } = props;
+  const { getUsers, users } = props;
+  const { isLoaded } = users;
   useEffect(() => {
-    getUsers();
+    if (isEmpty(users.data)) {
+      getUsers();
+    }
   }, []);
 
   const columns = [
@@ -14,7 +18,6 @@ const UsersDataTable = (props) => {
       title: "Name",
       dataIndex: "name",
       key: "name",
-      render: (text) => <a>{text}</a>,
     },
     {
       title: "Email",
@@ -33,34 +36,23 @@ const UsersDataTable = (props) => {
     },
   ];
 
-  const data = [
-    {
-      key: "1",
-      name: "John Brown",
-      email: "email@g.com",
-      city: "New York",
-      country: "United States",
-    },
-    {
-      key: "2",
-      name: "Bobo",
-      email: "bobo@g.com",
-      city: "Salt Lake",
-      country: "United States",
-    },
-    {
-      key: "3",
-      name: "Jim Town",
-      email: "jim@gmail.com",
-      city: "New York",
-      country: "United States",
-    },
-  ];
+  const handleOnRowClick = (record, rowIndex) => {
+    console.log("handleOnRowClick", { record, rowIndex });
+  };
 
   return (
     <div className="UserDataTable">
       UserDataTable
-      <Table columns={columns} dataSource={data} />
+      <Table
+        columns={columns}
+        dataSource={users.data}
+        loading={!isLoaded}
+        onRow={(record, rowIndex) => {
+          return {
+            onClick: (event) => handleOnRowClick(record, rowIndex),
+          };
+        }}
+      ></Table>
     </div>
   );
 };
