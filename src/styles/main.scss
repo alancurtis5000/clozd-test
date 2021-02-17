@@ -1,20 +1,21 @@
 // base
-@import '~normalize.css/normalize.css';
-@import './base/variables';
-@import './base/mixins';
-@import './base/globals';
-@import '../App';
+@import "~normalize.css/normalize.css";
+@import "antd/dist/antd.css";
+@import "./base/variables";
+@import "./base/mixins";
+@import "./base/globals";
+@import "../App";
 
 // pages
 // example @import '../pages/APage01/Page01';
-@import '../pages/APage01/APage01';
-@import '../pages/Landing/Landing';
-@import '../pages/StyleGuide/StyleGuide';
-@import '../pages/NotFound/NotFound';
+@import "../pages/APage01/APage01";
+@import "../pages/Landing/Landing";
+@import "../pages/StyleGuide/StyleGuide";
+@import "../pages/NotFound/NotFound";
 
 // components
 // example: @import '../components/Header/Header';
-@import '../components/Header/Header';
-@import '../components/Footer/Footer';
-@import '../components/Sidebar/Sidebar';
-@import '../components/ABasic/ABasic';
+@import "../components/Header/Header";
+@import "../components/Footer/Footer";
+@import "../components/Sidebar/Sidebar";
+@import "../components/ABasic/ABasic";

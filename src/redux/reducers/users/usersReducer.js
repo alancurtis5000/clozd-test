@@ -1,15 +1,29 @@
 import { usersActionTypes } from "./usersTypes";
 
 const initalState = {
-  currentUser: null,
+  data: [],
+  isLoaded: false,
+  error: "",
 };
 
 const usersReducer = (state = initalState, action) => {
   switch (action.type) {
-    case usersActionTypes.SET_CURRENT_USER:
+    case usersActionTypes.GET_USERS_START:
       return {
         ...state,
-        currentUser: action.payload,
+        isLoaded: false,
+      };
+    case usersActionTypes.GET_USERS_SUCCESS:
+      return {
+        ...state,
+        ...action.payload,
+        isLoaded: true,
+      };
+    case usersActionTypes.GET_USERS_FAILURE:
+      return {
+        ...state,
+        ...action.payload,
+        isLoaded: true,
       };
 
     default:
