@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "prettier.disableLanguages": [],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

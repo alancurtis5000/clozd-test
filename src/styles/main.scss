@@ -1,0 +1,20 @@
+// base
+@import '~normalize.css/normalize.css';
+@import './base/variables';
+@import './base/mixins';
+@import './base/globals';
+@import '../App';
+
+// pages
+// example @import '../pages/APage01/Page01';
+@import '../pages/APage01/APage01';
+@import '../pages/Landing/Landing';
+@import '../pages/StyleGuide/StyleGuide';
+@import '../pages/NotFound/NotFound';
+
+// components
+// example: @import '../components/Header/Header';
+@import '../components/Header/Header';
+@import '../components/Footer/Footer';
+@import '../components/Sidebar/Sidebar';
+@import '../components/ABasic/ABasic';

@@ -1,0 +1,10 @@
+.Sidebar {
+  background-color: rgb(110, 124, 201);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+}
