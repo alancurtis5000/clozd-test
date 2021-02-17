@@ -6,9 +6,9 @@
   grid-template-columns: 250px 1fr;
 
   grid-template-areas:
-    'header header'
-    'sidebar content'
-    'footer footer';
+    "header header"
+    "sidebar content"
+    "footer footer";
 
   .Header {
     grid-area: header;
