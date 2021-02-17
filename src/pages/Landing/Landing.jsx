@@ -1,10 +1,10 @@
-import TestRedux from "../../components/TestRedux/TestRedux";
+import UsersDataTable from "../../components/UsersDataTable/UsersDataTable";
 
 const Landing = () => {
   return (
     <div className="Landing page">
       Landing
-      <TestRedux />
+      <UsersDataTable />
     </div>
   );
 };
