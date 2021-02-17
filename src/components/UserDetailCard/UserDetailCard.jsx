@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Skeleton, Card, Avatar } from "antd";
@@ -18,7 +17,6 @@ const UserDetailCard = (props) => {
     phone,
     dob,
   } = props.user;
-  useEffect(() => {}, []);
 
   return (
     <div className="UserDetailCard">

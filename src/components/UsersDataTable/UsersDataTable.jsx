@@ -9,11 +9,12 @@ import { withRouter } from "react-router-dom";
 const UsersDataTable = (props) => {
   const { getUsers, setUser, users, history } = props;
   const { isLoaded } = users;
+
   useEffect(() => {
     if (isEmpty(users.data)) {
       getUsers();
     }
-  }, []);
+  }, [getUsers, users.data]);
 
   const columns = [
     {

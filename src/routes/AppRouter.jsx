@@ -14,7 +14,6 @@ const Routes = withRouter(({ location }) => {
     <Switch location={location}>
       <Route path="/" exact component={Users} />
       <Route path="/user/:id" component={User} />
-
       <Route component={NotFound} />
     </Switch>
   );
