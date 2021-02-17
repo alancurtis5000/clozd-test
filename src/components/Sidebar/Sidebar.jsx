@@ -5,7 +5,7 @@ const Sidebar = () => {
     <div className="Sidebar">
       <h2>Navigation</h2>
       <div className="links">
-        <Link to="/">
+        <Link to="/clozd-test/">
           <button>Users</button>
         </Link>
       </div>
