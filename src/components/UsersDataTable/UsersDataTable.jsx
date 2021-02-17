@@ -45,7 +45,6 @@ const UsersDataTable = (props) => {
 
   return (
     <div className="UserDataTable">
-      UserDataTable
       <Table
         columns={columns}
         dataSource={users.data}
