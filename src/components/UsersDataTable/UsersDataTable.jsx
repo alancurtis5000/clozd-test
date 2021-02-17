@@ -50,6 +50,7 @@ const UsersDataTable = (props) => {
         columns={columns}
         dataSource={users.data}
         loading={!isLoaded}
+        pagination={{ pageSize: 5000 }}
         onRow={(record, rowIndex) => {
           return {
             onClick: (event) => handleOnRowClick(record, rowIndex),

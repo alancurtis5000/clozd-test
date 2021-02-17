@@ -16,7 +16,7 @@ export const getUsers = () => {
   return async (dispatch) => {
     dispatch(getUsersStart());
     return axios
-      .get("https://randomuser.me/api/?results=50")
+      .get("https://randomuser.me/api/?results=5000")
       .then((response) => {
         const users = response.data.results;
         const mapUsers = users.map((user, index) => {
