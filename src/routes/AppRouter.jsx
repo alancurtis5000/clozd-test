@@ -2,8 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Switch, withRouter } from "react-router-dom";
 
 import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import Sidebar from "../components/Sidebar/Sidebar";
 
 import Users from "../pages/Users/Users";
 import User from "../pages/User/User";
@@ -24,8 +22,6 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Sidebar />
-      <Footer />
       <div className="content">
         <Routes />
       </div>

@@ -8,36 +8,23 @@ export const getUsersSuccess = (users) => ({
   type: usersActionTypes.GET_USERS_SUCCESS,
   payload: { data: users },
 });
-export const getUsersFailure = () => ({
+export const getUsersFailure = (error) => ({
   type: usersActionTypes.GET_USERS_FAILURE,
+  payload: { error: error },
 });
 
 export const getUsers = () => {
   return async (dispatch) => {
     dispatch(getUsersStart());
     return axios
-      .get("https://randomuser.me/api/?results=5000")
+      .get("http://localhost:3006/api/users")
       .then((response) => {
-        const users = response.data.results;
-        const mapUsers = users.map((user, index) => {
-          return {
-            key: index,
-            name: `${user.name.first} ${user.name.last}`,
-            email: user.email,
-            city: user.location.city,
-            country: user.location.country,
-            address: `${user.location.street.number} ${user.location.street.name}`,
-            postcode: user.location.postcode,
-            picture: user.picture.medium,
-            phone: user.phone,
-            dob: user.dob.date,
-          };
-        });
-        dispatch(getUsersSuccess(mapUsers));
+        const users = response.data;
+        dispatch(getUsersSuccess(users));
       })
       .catch((error) => {
-        console.log(error);
-        dispatch(getUsersFailure());
+        console.log({ error, msg: error.message });
+        dispatch(getUsersFailure(error.message));
       });
   };
 };

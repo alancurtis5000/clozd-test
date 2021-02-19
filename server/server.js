@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
+const cors = require("cors");
 const app = express();
 const find = require("lodash/find");
 
 // Top Level middleware
+app.use(cors());
 app.use(express.static(`${__dirname}/../build`));
 app.use(bodyParser.json());
 
@@ -13,7 +15,7 @@ let fakeDatabase = [];
 
 const getFakeDatabaseData = () => {
   axios
-    .get("https://randomuser.me/api/?results=5")
+    .get("https://randomuser.me/api/?results=100")
     .then((response) => {
       const users = response.data.results;
       const mapUsers = users.map((user, index) => {

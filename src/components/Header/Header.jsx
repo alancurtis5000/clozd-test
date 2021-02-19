@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div
@@ -14,6 +15,9 @@ const Header = () => {
         }}
       >
         Alan Curtis: Get all the Users
+        <Link to="/clozd-test/">
+          <button>Users</button>
+        </Link>
       </h1>
     </div>
   );

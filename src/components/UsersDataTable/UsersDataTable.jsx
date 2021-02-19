@@ -46,6 +46,7 @@ const UsersDataTable = (props) => {
 
   return (
     <div className="UserDataTable">
+      {users.error ? <p>{users.error}</p> : null}
       <Table
         columns={columns}
         dataSource={users.data}
