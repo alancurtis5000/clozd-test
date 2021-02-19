@@ -8,7 +8,7 @@ import { getUser } from "../../redux/reducers/user/userActions";
 const { Meta } = Card;
 
 const UserDetailCard = (props) => {
-  const { getUser, match } = props;
+  const { getUser, match, isLoaded } = props;
   const {
     name,
     email,
@@ -26,10 +26,13 @@ const UserDetailCard = (props) => {
     getUser(userId);
   }, []);
 
+  if (!props.user) {
+    return <div>no user found</div>;
+  }
   return (
     <div className="UserDetailCard">
       <Card>
-        <Skeleton loading={false} avatar active>
+        <Skeleton loading={!isLoaded} avatar active>
           <Meta avatar={<Avatar src={picture} />} title={name} />
           <div className="email">
             <label>
@@ -86,6 +89,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   user: state.user.data,
+  isLoaded: state.user.isLoaded,
 });
 
 export default withRouter(
