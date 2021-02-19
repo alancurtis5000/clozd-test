@@ -45,8 +45,11 @@ const UsersDataTable = (props) => {
   };
 
   return (
-    <div className="UserDataTable">
-      {users.error ? <p>{users.error}</p> : null}
+    <div className="UsersDataTable">
+      <div className="table-header">
+        <h2>Users</h2>
+        {users.error ? <p>{users.error}</p> : null}
+      </div>
       <Table
         columns={columns}
         dataSource={users.data}

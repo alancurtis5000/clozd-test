@@ -1,24 +1,15 @@
 import { Link } from "react-router-dom";
+import { Button } from "antd";
 const Header = () => {
   return (
-    <div
-      className="Header"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <h1
-        style={{
-          margin: 0,
-        }}
-      >
-        Alan Curtis: Get all the Users
+    <div className="Header">
+      <h1 className="title">Alan Curtis</h1>
+      <div className="navigation">
+        <h2>Navigation</h2>
         <Link to="/">
-          <button>Users</button>
+          <Button>Users</Button>
         </Link>
-      </h1>
+      </div>
     </div>
   );
 };
