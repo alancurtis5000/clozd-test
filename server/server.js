@@ -15,7 +15,7 @@ let fakeDatabase = [];
 
 const getFakeDatabaseData = () => {
   axios
-    .get("https://randomuser.me/api/?results=100")
+    .get("https://randomuser.me/api/?results=5000")
     .then((response) => {
       const users = response.data.results;
       const mapUsers = users.map((user, index) => {
