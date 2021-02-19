@@ -20,17 +20,10 @@ const UserDetailCard = (props) => {
 
   return (
     <div className="UserDetailCard">
-      <Card
-        style={{
-          width: 400,
-          marginTop: 16,
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+      <Card>
         <Skeleton loading={false} avatar active>
           <Meta avatar={<Avatar src={picture} />} title={name} />
-          <div style={{ marginTop: 16 }}>
+          <div className="email">
             <label>
               <b>Email: </b>
             </label>

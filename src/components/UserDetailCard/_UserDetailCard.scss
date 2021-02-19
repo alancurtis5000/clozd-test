@@ -1,0 +1,11 @@
+.UserDetailCard {
+  .ant-card {
+    min-width: 300px;
+    margin-top: 16;
+    display: flex;
+    justify-content: center;
+    .email {
+      margin-top: 16px;
+    }
+  }
+}
