@@ -5,7 +5,7 @@
 `node ./server/server.js`
 Runs the server on port 3006.\
 Open [http://localhost:3006](http://localhost:3006) to view it in the browser.\
-endpoints:
+#### Endpoints:
 - '/api/user?id=2'
 - '/api/users'
 
