@@ -11,8 +11,7 @@ const Routes = withRouter(({ location }) => {
   return (
     <Switch location={location}>
       <Route path="/" exact component={Users} />
-      <Route path="/clozd-test/" exact component={Users} />
-      <Route path="/clozd-test/user/:id" component={User} />
+      <Route path="/user/:id" component={User} />
       <Route component={NotFound} />
     </Switch>
   );

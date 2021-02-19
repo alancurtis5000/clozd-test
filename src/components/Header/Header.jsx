@@ -15,7 +15,7 @@ const Header = () => {
         }}
       >
         Alan Curtis: Get all the Users
-        <Link to="/clozd-test/">
+        <Link to="/">
           <button>Users</button>
         </Link>
       </h1>

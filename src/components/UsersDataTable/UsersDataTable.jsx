@@ -41,7 +41,7 @@ const UsersDataTable = (props) => {
 
   const handleOnRowClick = (record, rowIndex) => {
     setUser(record);
-    history.push(`/clozd-test/user/${record.key}`);
+    history.push(`/user/${record.key}`);
   };
 
   return (
