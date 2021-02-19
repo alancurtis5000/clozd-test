@@ -33,7 +33,6 @@ const getFakeDatabaseData = () => {
           dob: user.dob.date,
         };
       });
-      console.log({ mapUsers });
       fakeDatabase = [...mapUsers];
     })
     .catch((error) => {
@@ -48,14 +47,9 @@ app.get("/api/users", (req, res) => {
 });
 
 app.get("/api/user", (req, res) => {
-  console.log(req);
-  const id = req.body.id;
+  const id = req.query.id * 1;
   const user = find(fakeDatabase, { id: id });
-  if (user) {
-    res.status(200).send(user);
-  } else {
-    res.status(200).send({ error: "could not find user" });
-  }
+  res.status(200).send(user);
 });
 
 app.listen(3006, () => console.log(`server running on port: ${3006}`));

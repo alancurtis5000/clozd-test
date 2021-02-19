@@ -1,11 +1,14 @@
+import { useEffect } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Skeleton, Card, Avatar } from "antd";
 import moment from "moment";
+import { getUser } from "../../redux/reducers/user/userActions";
 
 const { Meta } = Card;
 
 const UserDetailCard = (props) => {
+  const { getUser, match } = props;
   const {
     name,
     email,
@@ -17,6 +20,11 @@ const UserDetailCard = (props) => {
     phone,
     dob,
   } = props.user;
+
+  useEffect(() => {
+    const userId = match.params.id;
+    getUser(userId);
+  }, []);
 
   return (
     <div className="UserDetailCard">
@@ -72,8 +80,14 @@ const UserDetailCard = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  user: state.user,
+const mapDispatchToProps = (dispatch) => ({
+  getUser: (id) => dispatch(getUser(id)),
 });
 
-export default connect(mapStateToProps)(withRouter(UserDetailCard));
+const mapStateToProps = (state) => ({
+  user: state.user.data,
+});
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(UserDetailCard)
+);

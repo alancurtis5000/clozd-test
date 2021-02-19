@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import { getUsers } from "../../redux/reducers/users/usersActions";
-import { setUser } from "../../redux/reducers/user/userActions";
 import { Table } from "antd";
 import isEmpty from "lodash/isEmpty";
 import { withRouter } from "react-router-dom";
 
 const UsersDataTable = (props) => {
-  const { getUsers, setUser, users, history } = props;
+  const { getUsers, users, history } = props;
   const { isLoaded } = users;
 
   useEffect(() => {
@@ -40,7 +39,6 @@ const UsersDataTable = (props) => {
   ];
 
   const handleOnRowClick = (record, rowIndex) => {
-    setUser(record);
     history.push(`/user/${record.key}`);
   };
 
@@ -67,7 +65,6 @@ const UsersDataTable = (props) => {
 
 const mapDispatchToProps = (dispatch) => ({
   getUsers: () => dispatch(getUsers()),
-  setUser: (user) => dispatch(setUser(user)),
 });
 const mapStateToProps = (state) => ({
   users: state.users,
