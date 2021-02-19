@@ -9,12 +9,3 @@ html {
   // allows for rems to match pixel by power of 10.
   font-size: 62.5%;
 }
-
-:focus {
-  outline: $c-3 solid 2px;
-  z-index: 1;
-}
-
-.page {
-  min-height: calc(100vh - 120px);
-}
